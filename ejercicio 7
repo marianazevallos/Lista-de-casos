@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+  // Solicitar la nota del primer examen y la media deseada
+        System.out.print("Introduce la nota del primer examen: ");
+        double notaPrimerExamen = scanner.nextDouble();
+
+        System.out.print("Que notas quieres sacar en el trimestre? ");
+        double mediaDeseada = scanner.nextDouble();
+
+        // Calcular la nota necesaria en el segundo examen
+        double notaSegundoExamen = (mediaDeseada - (notaPrimerExamen * 0.4)) / 0.6;
+
+        // Formatear la nota del primer examen
+        String mediaDeseadaFormateada;
+        if (mediaDeseada % 1 == 0) {
+            // Si no tiene decimales
+            mediaDeseadaFormateada = String.format("%.0f", mediaDeseada);
+        } else {
+            // Si tiene decimales
+            mediaDeseadaFormateada = String.format("%.2f", mediaDeseada);
+        }
+
+        // Formatear la nota necesaria en el segundo examen
+        String notaSegundoExamenFormateada;
+        if (notaSegundoExamen % 1 == 0) {
+            // Si no tiene decimales
+            notaSegundoExamenFormateada = String.format("%.0f", notaSegundoExamen);
+        } else {
+            // Si tiene decimales
+            notaSegundoExamenFormateada = String.format("%.2f", notaSegundoExamen);
+        }
+
+        // Asegurarse de que la nota necesaria esté en el rango [0, 10]
+        if (notaSegundoExamen < 0 || notaSegundoExamen > 10) {
+            System.out.println("No es posible alcanzar la media deseada con las notas proporcionadas.");
+        } else {
+           System.out.println("Para tener un  " + mediaDeseadaFormateada + " en el trimestre necesitas sacar un " + notaSegundoExamenFormateada + " en el segundo examen");
+        }
+    }
+}
