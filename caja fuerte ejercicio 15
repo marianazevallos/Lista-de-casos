@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        final int combinacion = 2605;
+
+        int intentos = 4;
+
+        while (intentos > 0) {
+            System.out.print("Introduce la combinación de 4 cifras: ");
+            int intento = scanner.nextInt();
+
+            if (intento == combinacion) {
+                System.out.println("La caja fuerte se ha abierto satisfactoriamente.");
+                break; //salir del bucle
+                
+            } else 
+                {
+                System.out.println("Lo siento, esa no es la combinación.");
+                intentos--;
+                if (intentos > 0) {
+                    System.out.println("Te quedan " + intentos + " intentos.");
+                } else {
+                    System.out.println("Te has quedado sin intentos. La caja fuerte permanece cerrada.");
+                }
+            }
+        }
+
+        scanner.close();
+    }
+}
