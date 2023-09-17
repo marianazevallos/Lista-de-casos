@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Ingresar el día de lunes a viernes: ");
+        String diaSemana = scanner.nextLine();
+
+
+        System.out.print("Ingresar la hora (HH:MM): ");
+        String horaInput = scanner.nextLine();
+        
+        scanner.close();
+
+
+        int minutosPorDia = 24 * 60;
+        int minutosViernes = 15 * 60;
+
+
+        int minutosHastaFinDeSemana = 0;
+
+        switch (diaSemana) {
+            case "lunes":
+                minutosHastaFinDeSemana = (4 * minutosPorDia) - minutosViernes + convertirHoraAMinutos(horaInput);
+                break;
+            case "martes":
+            case "miércoles":
+            case "jueves":
+                minutosHastaFinDeSemana = (3 * minutosPorDia) - minutosViernes + convertirHoraAMinutos(horaInput);
+                break;
+            case "viernes":
+                minutosHastaFinDeSemana = minutosViernes - convertirHoraAMinutos(horaInput);
+                break;
+        }
+
+        System.out.println("Minutos hasta el fin de semana: " + minutosHastaFinDeSemana + " minutos");
+    }
+
+    //hh:mm
+    public static int convertirHoraAMinutos(String hora) {
+        String[] partes = hora.split(":");
+        int horas = Integer.parseInt(partes[0]);
+        int minutos = Integer.parseInt(partes[1]);
+        return (horas * 60) + minutos;
+    }
+}
