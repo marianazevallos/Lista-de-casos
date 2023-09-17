@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+       
+        double tasaCambio = 166.386;
+
+       
+        double euros = 20; 
+
+        
+        double pesetas = euros * tasaCambio;
+
+        
+        System.out.println(euros + " euros equivale a " + pesetas + " pesetas.");
+    }
+}
