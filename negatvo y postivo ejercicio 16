@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int totalNumeros = 10;
+        int numerosPositivos = 0;
+        int numerosNegativos = 0;
+
+        for (int i = 1; i <= totalNumeros; i++) {
+            System.out.print("Ingresar el número " + i + ": ");
+            int numero = scanner.nextInt();
+
+            if (numero > 0) {
+                numerosPositivos++;
+            } else if (numero < 0) {
+                numerosNegativos++;
+            }
+        }
+
+        scanner.close();
+
+        System.out.println("Números positivos: " + numerosPositivos);
+        System.out.println("Números negativos: " + numerosNegativos);
+    }
+}
