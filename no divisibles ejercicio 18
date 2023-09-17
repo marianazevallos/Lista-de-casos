@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresa un número: ");
+        int limite = scanner.nextInt();
+
+        System.out.print("Ingresa el número 2: ");
+        int divisor = scanner.nextInt();
+
+        scanner.close();
+
+        for (int i = 1; i < limite; i++) {
+            if (i % divisor != 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
