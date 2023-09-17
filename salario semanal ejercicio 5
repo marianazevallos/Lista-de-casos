@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       
+        int pago = 12;
+        
+        System.out.println("Ingrese las horas trabajadas en la semana : ");
+        Scanner scanner = new Scanner(System.in);
+       
+        int horas = scanner.nextInt();
+        
+        int salario = pago * horas;
+        
+        System.out.println("Su salario es: " + salario + " euros.");
+        
+        
+    }
+}
