@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       
+        int horasordinarias = 12;
+        int horas = 16;
+        
+        System.out.println("Ingrese las horas trabajadas: ");
+        Scanner scanner = new Scanner(System.in);
+       
+        int horastrabajadas = scanner.nextInt();
+        
+        int salario;
+        if (horastrabajadas <= 40){
+            salario = horastrabajadas * horasordinarias;
+            
+        } 
+            else {
+                int horasnormales = 40;
+                int horasextras = horastrabajadas - horasnormales;
+                salario = (horasnormales * horasordinarias) + (horasextras * horas);
+        }
+        
+        System.out.println("su salario es: " + salario + ".");
+        
+        
+    }
+}
