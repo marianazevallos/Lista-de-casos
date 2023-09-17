@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       
+        int valor = 1000;
+        
+        System.out.println("Ingrese el megabyte: ");
+        Scanner scanner = new Scanner(System.in);
+       
+        int mb = scanner.nextInt();
+        
+        int kb = valor * mb;
+        
+        System.out.println("Convertido en kylobyte es: " + kb + ".");
+        
+        
+    }
+}
