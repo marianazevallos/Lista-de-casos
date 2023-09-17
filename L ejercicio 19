@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresar la altura de la letra L: ");
+        int altura = scanner.nextInt();
+
+        scanner.close();
+
+        if (altura < 2) {
+            System.out.println("La altura debe ser al menos 2.");
+        } else {
+            for (int i = 1; i <= altura; i++) {
+                //vertical
+                if (i < altura) {
+                    System.out.println("*");
+                } else {
+                    //horizontal y mitad + 1
+                    for (int j = 0; j < altura / 2 + 1; j++) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+    }
+}
