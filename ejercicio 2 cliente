@@ -1,0 +1,57 @@
+public class Cliente{
+    
+    //atributos
+    private String nombre;
+    private String direccion;
+    private String telefono;
+    
+    //constructores
+    public Cliente(){
+        this.nombre = null;
+        this.direccion = null;
+        this.telefono = null;
+    };
+    
+    public Cliente(String _nombre, String _direccion, String _telefono){
+        this.nombre = _nombre;
+        this.direccion = _direccion;
+        this.telefono = _telefono;
+    }
+    
+    //get y set
+    public void setNombre(String _nombre){
+        this.nombre = _nombre;
+    }
+    
+    public String getNombre(){
+        return this.nombre;
+    }
+    
+    public void setDireccion(String _direccion){
+        this.direccion = _direccion;
+    }
+    
+    public String getDireccion(){
+        return this.direccion;
+    }
+    
+    public void setTelefono(String _telefono){
+        this.telefono = _telefono;
+    }
+    
+    public String getTelefono(){
+        return this.telefono;
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Cliente cliente01 = new Cliente();
+		cliente01.setNombre("Mariana");
+		cliente01.setTelefono("969361889");
+		cliente01.setDireccion("Surco");
+		System.out.println("Nombre: " + cliente01.getNombre() + " " + "Numero de telefono : " + cliente01.getTelefono() + " " + "Direccion: " + cliente01.getDireccion() + " ");
+	} 
+}
