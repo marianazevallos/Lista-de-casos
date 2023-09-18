@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+      Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Por favor, introduzca un numero entero positivo: ");
+        long numero = scanner.nextLong();
+        
+        long numeroAbsoluto = Math.abs(numero); // Tomamos el valor absoluto del número para manejar números negativos
+        
+        String numeroComoString = String.valueOf(numeroAbsoluto);
+        int longitud = numeroComoString.length();
+        
+        long sumaDigitosPares = 0;
+        List<Integer> digitosPares = new ArrayList<>();
+        
+        for (int i = 0; i < longitud; i++) {
+            char digitoChar = numeroComoString.charAt(i);
+            int digito = Character.getNumericValue(digitoChar);
+            
+            if (digito % 2 == 0) { // Comprobamos si el dígito es par
+                digitosPares.add(digito);
+                sumaDigitosPares += digito;
+            }
+        }
+        
+        if (!digitosPares.isEmpty()) {
+            Collections.sort(digitosPares); // Ordenamos la lista de dígitos pares
+            
+            System.out.print("Digitos pares: ");
+            for (int digito : digitosPares) {
+                System.out.print(digito + " ");
+            }
+            System.out.println("\nsuma de los digitos pares: " + sumaDigitosPares);
+        } else {
+            
+            System.out.println("No hay dígitos pares en el número.");
+        }
+        
+        scanner.close();
+    }
+}
